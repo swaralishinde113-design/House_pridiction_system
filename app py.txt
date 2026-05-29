@@ -1,0 +1,32 @@
+
+# FILE: app.py
+# House Price Prediction CLI
+
+
+import joblib
+import numpy as np
+
+# Load Model and Encoder
+model = joblib.load("house_price_model.pkl")
+encoder = joblib.load("location_encoder.pkl")
+
+print("\n===== House Price Prediction System =====\n")
+
+# User Input
+area = float(input("Enter Area (sq ft): "))
+bedrooms = int(input("Enter Number of Bedrooms: "))
+bathrooms = int(input("Enter Number of Bathrooms: "))
+location = input("Enter Location (Urban/Suburban/Rural): ")
+
+# Encode location
+location_encoded = encoder.transform([location])[0]
+
+# Prepare Input
+input_data = np.array([
+    [area, bedrooms, bathrooms, location_encoded]
+])
+
+# Predict Price
+prediction = model.predict(input_data)
+
+print(f"\nPredicted House Price: ₹ {prediction[0]:,.2f}")

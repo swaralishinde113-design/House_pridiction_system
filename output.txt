@@ -1,0 +1,8 @@
+===== House Price Prediction System =====
+
+Enter Area (sq ft): 1800
+Enter Number of Bedrooms: 3
+Enter Number of Bathrooms: 3
+Enter Location (Urban/Suburban/Rural): Urban
+
+Predicted House Price: ₹ 8,450,000.00

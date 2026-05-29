@@ -1,0 +1,10 @@
+house-price-prediction/
+│
+├── housing_data.csv
+├── train_model.py
+├── app.py
+├── visualization.py
+├── requirements.txt
+├── README.md
+├── house_price_model.pkl
+└── location_encoder.pkl

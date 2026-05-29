@@ -1,0 +1,30 @@
+
+# FILE: visualization.py
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load dataset
+data = pd.read_csv("housing_data.csv")
+
+# Plot 1: Area vs Price
+plt.figure(figsize=(8,5))
+sns.scatterplot(x='area', y='price', data=data)
+plt.title("Area vs Price")
+plt.xlabel("Area")
+plt.ylabel("Price")
+plt.show()
+
+# Plot 2: Bedrooms vs Price
+plt.figure(figsize=(8,5))
+sns.barplot(x='bedrooms', y='price', data=data)
+plt.title("Bedrooms vs Price")
+plt.show()
+
+# Plot 3: Correlation Heatmap
+plt.figure(figsize=(6,4))
+sns.heatmap(data.corr(numeric_only=True), annot=True, cmap='Blues')
+plt.title("Feature Correlation")
+plt.show()
